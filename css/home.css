@@ -1,0 +1,26 @@
+header {
+    text-align: center;
+}
+header .logo {
+    font-size: 25px;
+    background: #eee;
+    color: #2189f7;
+}
+
+.weui-navbar__item {
+    line-height: 10px;
+}
+
+.recommend {
+    line-height: 70px;
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    height: 70px;
+    background-position: center;
+    background-image: url('../img/recommend.jpg');
+}
+.list {
+    margin-bottom: 70px;
+}
+

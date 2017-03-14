@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>支付成功</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #eee;
+        }
+        .panel {
+            background: #fff;
+            border-radius: 10px;
+            width: 300px;
+            margin: 100px auto;
+            box-shadow: 0 5px 2px #ddd;
+            padding-top: 1px;
+        }
+        .success {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #92dd5a;
+            font-size: 20px;
+        }
+        .success img {
+            width: 60%;
+            margin: 0 auto;
+            display: block;
+        }
+        .footer {
+            display: flex;
+        }
+        .footer a {
+            flex: 1;
+            text-align: center;
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            background-color: tomato;
+        }
+        .footer a:first-child {
+            border-right: 1px solid #fff;
+            border-bottom-left-radius: 10px;
+        }
+        .footer a:last-child {
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <div class="success">
+            <img src="./img/success.png" alt="">
+            <p>支付成功</p>
+        </div>
+        <div class="footer">
+            <a href="">逛逛其他</a>
+            <a href="">个人页面</a>
+        </div>
+    </div>
+</body>
+</html>

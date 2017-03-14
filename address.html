@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地址信息</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #eee;
+        }
+        .address {
+            padding: 10px;
+            margin-bottom: 50px;
+        }
+        .address-item {
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 3px 1px  #ddd;
+            position: relative;
+        }
+        .del-btn {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #ff696a;
+            border-radius: 50%;
+        }
+        .info {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+        .info-name {
+            width: 50px;
+            flex-shrink: 0;
+        }
+        .info-value {
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="address">
+        <div class="address-item">
+            <div class="del-btn" onclick="confirm_del(event)">×</div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+        <div class="address-item">
+            <div class="del-btn" onclick="confirm_del(event)">×</div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+        <div class="address-item">
+            <div class="del-btn" onclick="confirm_del(event)">×</div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+        <div class="address-item">
+            <div class="del-btn" onclick="confirm_del(event)">×</div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; margin-top: 10px;">
+            <div style="flex: 1; text-align: center;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default" style=" background-color: #dbdce0; color: white;">按钮</a>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <a href="" class="weui-btn weui-btn_mini weui-btn_default"  style="background-color: #6cc5fa; color: white;">下一页</a>
+            </div>
+        </div>
+    </div>
+    <!-- 底部栏位 -->
+    <div class="weui-tabbar" style="position: fixed;">
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/home.svg">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/shopping-cart.svg">
+            </div>
+            <p class="weui-tabbar__label">购物车</p>
+        </a>
+        <a class="weui-tabbar__item" href="">
+            <div class="weui-tabbar__icon">
+                <img src="./img/avatar.svg">
+            </div>
+            <p class="weui-tabbar__label">个人中心</p>
+        </a>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript">
+    $(function () {
+        FastClick.attach(document.body);
+    });
+    var confirm_del = function(event){
+        event.preventDefault();
+        $.confirm({
+            title: '确认删除地址?',
+            onOK: function(){
+                // 删除代码
+            }
+        });
+    };
+</script>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选择地址</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eee;
+        }
+        .submit-btn {
+            margin-top: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 60px;
+        }
+        .change-btn {
+            margin: 10px;
+        }
+        #existing_address {
+            padding: 10px;
+        }
+        #new_address {
+            display: none;
+        }
+        .address-item {
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 3px 1px  #ddd;
+            position: relative;
+        }
+        .selected {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            background-color: #48c289;
+            border-radius: 50%;
+            display: none;
+        }
+        .info {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+        .info-name {
+            width: 50px;
+            flex-shrink: 0;
+        }
+        .info-value {
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <div id="existing_address">
+        <div class="change-btn">
+            <button class="weui-btn weui-btn_default" style="background-color: #6cc5fa; color: #fff;" onclick="change(event,0)">使用新地址</button>
+        </div>
+        <div class="address-item" onclick="select(event, 0)">
+            <div class="selected" style="display: block;"></div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+        <div class="address-item" onclick="select(event, 1)">
+            <div class="selected"></div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+        <div class="address-item" onclick="select(event, 2)">
+            <div class="selected"></div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+        <div class="address-item" onclick="select(event, 3)">
+            <div class="selected"></div>
+            <div class="info">
+                <div class="info-name">
+                    地址
+                </div>
+                <div class="info-value">
+                    吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号吉林省长春市南关区亚泰大街2555号
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    电话
+                </div>
+                <div class="info-value">
+                    12345678911
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-name">
+                    姓名
+                </div>
+                <div class="info-value">
+                    张三
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="new_address">
+        <div class="change-btn">
+            <button class="weui-btn weui-btn_default" style="background-color: #6cc5fa; color: #fff;" href="javascript:;" onclick="change(event,1)">选择旧地址</button>
+        </div>
+            <div class="weui-cells__title">姓名</div>
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入姓名">
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cells__title">电话</div>
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入电话">
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cells__title">地址</div>
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入地址">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="submit-btn">
+            <button class="weui-btn weui-btn_default" style="background-color: #3e9ff8; color: #fff;" href="javascript:;">确认</button>
+        </div>
+    </form>
+    <!-- 底部栏位 -->
+    <div class="weui-tabbar" style="position: fixed;">
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/home.svg">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/shopping-cart.svg">
+            </div>
+            <p class="weui-tabbar__label">购物车</p>
+        </a>
+        <a class="weui-tabbar__item" href="">
+            <div class="weui-tabbar__icon">
+                <img src="./img/avatar.svg">
+            </div>
+            <p class="weui-tabbar__label">个人中心</p>
+        </a>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript">
+    $(function () {
+        FastClick.attach(document.body);
+    });
+    var change = function(event, state) {
+        // state=0 从 exsiting 切换到 new
+        // state=1 从 new 切换到 exsiting
+        event.preventDefault();
+        new_address = $('#new_address');
+        existing_address = $('#existing_address');
+        if(state){
+            new_address.hide();
+            existing_address.show();
+        }else{
+            existing_address.hide();
+            new_address.show();
+        }
+    };
+    var select = function(event, select_i) {
+        event.preventDefault();
+        selected_stamps = $('.selected');
+        for(var i=0;i<selected_stamps.length;i++){
+            if(i==select_i){
+                $(selected_stamps[i]).show();
+            }else{
+                $(selected_stamps[i]).hide();
+            }
+        }
+    };
+</script>
+</html>

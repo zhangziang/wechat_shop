@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加地址</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eee;
+        }
+        .submit-btn {
+            margin-top: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="weui-cells__title">姓名</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入姓名">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__title">电话</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入电话">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__title">地址</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入地址">
+                </div>
+            </div>
+        </div>
+        <div class="submit-btn">
+            <button class="weui-btn weui-btn_default" style="background-color: #3e9ff8; color: #fff;" href="javascript:;">确认</button>
+        </div>
+    </form>
+    <!-- 底部栏位 -->
+    <div class="weui-tabbar" style="position: fixed;">
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/home.svg">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/shopping-cart.svg">
+            </div>
+            <p class="weui-tabbar__label">购物车</p>
+        </a>
+        <a class="weui-tabbar__item" href="">
+            <div class="weui-tabbar__icon">
+                <img src="./img/avatar.svg">
+            </div>
+            <p class="weui-tabbar__label">个人中心</p>
+        </a>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript">
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+</html>

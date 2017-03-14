@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品详情</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/detail.css"/>
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+    <style type="text/css">
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="images">
+        <div><img src="http://www.mycookey.com/images/Sora/Health_23072015/404.jpg" alt="图片未加载..."></div>
+        <div><img src="http://i8.hexunimg.cn/2013-09-02/157624384.jpg" alt="图片未加载..."></div>
+        <div><img src="http://a2.att.hudong.com/60/70/14300000883681127830704050556.jpg" alt="图片未加载..."></div>
+    </div>
+    <div class="info">
+        <div class="primary">
+            <p>玉米</p>
+            <p>5 元</p>
+            <p>库存 10 件</p>
+        </div>
+        <div class="intro">
+            <p style="color: #555;">商品信息</p>
+            <p>玉米（学名：Zea mays）是一年生禾本科草本植物，是全世界总产量最高的重要粮食作物。同时也可以当作饲料使用，还有在生物科技产业作为乙醇燃料的原材料。而且玉米更在各个化工领域被大量利用着，做成塑胶等等不同的物品。</p>
+        </div>
+    </div>
+    <div class="cart">
+        <form>
+            <p class="amount-text">购买数量</p>
+            <div class="amount">
+                <button id="reduce-button" style="border-bottom-left-radius: 5px;border-top-left-radius: 5px;" onclick="reduce_amount(event)">-</button><input type="text" id="amount" value="1" readonly="readonly"><button id="add-button" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;" onclick="add_amount(event)">+</button>
+            </div>
+            <button class="weui-btn weui-btn_default" style="background-color: #3e9ff8; color: #fff;">添加购物车</button>
+        </form>
+    </div>
+    <!-- 底部栏位 -->
+    <div class="weui-tabbar" style="position: fixed;">
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/home.svg">
+            </div>
+            <p class="weui-tabbar__label" style="color: #2189f7;">首页</p>
+        </a>
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/shopping-cart.svg">
+            </div>
+            <p class="weui-tabbar__label">购物车</p>
+        </a>
+        <a class="weui-tabbar__item" href="">
+            <div class="weui-tabbar__icon">
+                <img src="./img/avatar.svg">
+            </div>
+            <p class="weui-tabbar__label">个人中心</p>
+        </a>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="./js/slick.min.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript">
+    $(function () {
+        FastClick.attach(document.body);
+        $('.images').slick({accessibility:false, arrows: false, adaptiveHeight: true});
+    });
+    var amount_input = $("#amount");
+    var add_button = $("#add-button");
+    var reduce_button = $("#reduce-button");
+    var add_amount = function(event){
+        event.preventDefault();
+        var amount_val = parseInt(amount_input.val())+1;
+        if(amount_val > 0 && reduce_button.hasClass("btn-disable")) {
+            reduce_button.removeClass("btn-disable");
+        }
+        // todo 加入判断是否超过库存
+        amount_input.val(amount_val);
+    };
+    var reduce_amount = function(event){
+        event.preventDefault();
+        var amount_val = parseInt(amount_input.val())-1;
+        if(amount_val <= 0) {
+            amount_input.val(0);
+            reduce_button.addClass("btn-disable");
+        }else{
+            amount_input.val(amount_val);
+        }
+    }
+</script>
+</html>

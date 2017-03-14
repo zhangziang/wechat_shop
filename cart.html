@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>购物车</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/cart.css">
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="goods">
+        <div class="item">
+            <button class="del-btn" onclick="confirm_del(event)">×</button>
+            <div class="name">玉米</div>
+            <div class="amount-module">
+                <div class="amount">
+                    <button id="reduce-button" style="border-bottom-left-radius: 5px;border-top-left-radius: 5px;">-</button><input type="text" id="amount" value="1" readonly="readonly"><button id="add-button" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;">+</button>
+                </div>
+                <div class="price">12 元</div>
+            </div>
+        </div>
+        <div class="item">
+            <button class="del-btn" onclick="confirm_del(event)">×</button>
+            <div class="name">玉米</div>
+            <div class="amount-module">
+                <div class="amount">
+                    <button id="reduce-button" style="border-bottom-left-radius: 5px;border-top-left-radius: 5px;">-</button><input type="text" id="amount" value="1" readonly="readonly"><button id="add-button" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;">+</button>
+                </div>
+                <div class="price">12 元</div>
+            </div>
+        </div>
+    </div>
+    <div class="submit">
+        <div class="total">共计 20 元</div>
+        <a class="weui-btn weui-btn_default" style="background-color: #3e9ff8; color: #fff;" href="javascript:;">提交订单</a>
+    </div>
+    <!-- 底部栏位 -->
+    <div class="weui-tabbar" style="position: fixed;">
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/home.svg">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/shopping-cart.svg">
+            </div>
+            <p class="weui-tabbar__label" style="color: #2189f7;">购物车</p>
+        </a>
+        <a class="weui-tabbar__item" href="">
+            <div class="weui-tabbar__icon">
+                <img src="./img/avatar.svg">
+            </div>
+            <p class="weui-tabbar__label">个人中心</p>
+        </a>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript">
+    $(function () {
+        FastClick.attach(document.body);
+    });
+    var confirm_del = function(event){
+        event.preventDefault();
+        $.confirm({
+            title: '确认移出购物车?',
+            onOK: function(){
+                // 删除代码
+            }
+        });
+    };
+</script>
+</html>

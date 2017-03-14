@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单信息</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/order.css">
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="order">
+        <div class="order-item">
+            <div class="info">
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359314159265359314159265359314159265359</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359</div>
+                </div>
+            </div>
+        </div>
+        <div class="order-item">
+            <div class="info">
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359314159265359314159265359314159265359</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359</div>
+                </div>
+                <div class="info-item">
+                    <div style="flex:1; text-align: center; height: 30px;">
+                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default" style=" background-color: #3e9ff8; color: white;">查看详情</a>
+                    </div>
+                    <div style="flex:1; text-align: center; height: 30px;">
+                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default" style=" background-color: #ff696a; color: white;" onclick="confirm_del(event)">取消订单</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-item">
+            <div class="goods">
+                <div class="goods-item">
+                    <div class="goods-item_name">玉米</div>
+                    <div class="goods-item_amount">1 件</div>
+                </div>
+                <div class="goods-item">
+                    <div class="goods-item_name">玉米</div>
+                    <div class="goods-item_amount">1 件</div>
+                </div>
+                <div class="goods-item">
+                    <div class="goods-item_name">玉米</div>
+                    <div class="goods-item_amount">1 件</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359314159265359314159265359314159265359</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item_name">订单编号</div>
+                    <div class="info-item_value">314159265359</div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; margin-top: 10px;">
+            <div style="flex: 1; text-align: center;">
+                <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default" style=" background-color: #dbdce0; color: white;">按钮</a>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <a href="" class="weui-btn weui-btn_mini weui-btn_default"  style="background-color: #6cc5fa; color: white;">下一页</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 底部栏位 -->
+    <div class="weui-tabbar" style="position: fixed;">
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/home.svg">
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+                <img src="./img/shopping-cart.svg">
+            </div>
+            <p class="weui-tabbar__label">购物车</p>
+        </a>
+        <a class="weui-tabbar__item" href="">
+            <div class="weui-tabbar__icon">
+                <img src="./img/avatar.svg">
+            </div>
+            <p class="weui-tabbar__label">个人中心</p>
+        </a>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript">
+    $(function () {
+        FastClick.attach(document.body);
+    });
+    var confirm_del = function(event){
+        event.preventDefault();
+        $.confirm({
+            title: '确认取消订单?',
+            onOK: function(){
+                // 删除代码
+            }
+        });
+    };
+</script>
+</html>

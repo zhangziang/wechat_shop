@@ -1,0 +1,66 @@
+.item {
+    margin-bottom: 10px;
+    position: relative;
+    background-color: #fff;
+    padding: 10px;
+}
+.del-btn {
+    width: 30px;
+    height: 30px;
+    /*background: #f44336;*/
+    background: #ff696a;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 5px;
+}
+.name {
+    font-size: 20px;
+}
+.amount-module {
+    margin-top: 10px;
+}
+.amount {
+    border: solid 1px #ddd;
+    width: 90px;
+    display: inline-flex;
+    border-radius: 5px;
+}
+.amount > * {
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.amount > input {
+    text-align: center;
+    font-size: 15px;
+}
+.amount > button {
+    background-color: #6cc5fa;
+    color: #fff;
+    font-size: 20px;
+}
+.amount .btn-disable {
+    background: #dbdce0;
+}
+
+.price {
+    color: #c14f44;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.submit {
+    padding: 10px;
+    margin-bottom: 60px;
+}
+
+.total {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
